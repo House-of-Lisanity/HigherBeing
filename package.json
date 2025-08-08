@@ -1,0 +1,33 @@
+{
+  "name": "higherbeing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-all": "npm install --prefix client && npm install --prefix server",
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lisaj5472/HigherBeing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lisaj5472/HigherBeing/issues"
+  },
+  "homepage": "https://github.com/lisaj5472/HigherBeing#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.9",
+    "concurrently": "^9.2.0"
+  },
+  "dependencies": {
+    "@apollo/server": "^5.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "graphql": "^16.11.0",
+    "ts-node": "^10.9.2"
+  }
+}

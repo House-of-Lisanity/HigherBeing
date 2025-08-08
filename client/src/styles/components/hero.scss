@@ -1,0 +1,20 @@
+.hero-banner {
+  width: 100vw;
+  height: 75vh; // max 3/4 of viewport
+  background-image: url("/HigherBeing.jpg"); // ✅ replace with your image filename
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  padding: 3rem;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 3rem 2rem;
+  margin: 100px;
+  max-width: 400px;
+}
