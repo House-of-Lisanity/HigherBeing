@@ -10,8 +10,6 @@ const envPath = isDist
     ? path.resolve(__dirname, "../../.env")
     : path.resolve(__dirname, "../.env");
 dotenv.config({ path: envPath });
-console.log("🧪 Loaded .env from:", envPath);
-console.log("🔍 MONGODB_URI =", process.env.MONGODB_URI);
 console.log("🚀 Connected to MongoDB");
 const mongoURI = process.env.MONGODB_URI;
 if (!mongoURI)

@@ -4,6 +4,9 @@ import { expressMiddleware } from "@apollo/server/express4";
 import cors from "cors";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import dotenv from "dotenv";
+// import uploadRoute from "./routes/upload.js";
+dotenv.config();
 
 import typeDefs from "./schemas/typedefs/index.js";
 import { resolvers } from "./schemas/resolvers/index.js";
@@ -31,6 +34,8 @@ async function startApolloServer() {
     express.json(),
     expressMiddleware(server)
   );
+
+  // app.use("/api/upload", uploadRoute);
 
   if (process.env.NODE_ENV === "production") {
     const clientBuildPath = path.resolve(__dirname, "../../client/dist");

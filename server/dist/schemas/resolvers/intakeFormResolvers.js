@@ -18,7 +18,6 @@ const intakeFormResolvers = {
         deleteIntakeForm: async (_, { id }) => {
             return await IntakeForm.findByIdAndDelete(id);
         },
-        IntakeForm,
     },
 };
 export default intakeFormResolvers;

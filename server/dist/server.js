@@ -4,6 +4,9 @@ import { expressMiddleware } from "@apollo/server/express4";
 import cors from "cors";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import dotenv from "dotenv";
+// import uploadRoute from "./routes/upload.js";
+dotenv.config();
 import typeDefs from "./schemas/typedefs/index.js";
 import { resolvers } from "./schemas/resolvers/index.js";
 import db from "./config/connection.js";
@@ -19,7 +22,8 @@ async function startApolloServer() {
     console.log("🔧 Apollo Server setup starting");
     await server.start();
     console.log("✅ Apollo Server started");
-    app.use("/graphql", cors({ origin: "http://localhost:3000", credentials: true }), express.json(), expressMiddleware(server));
+    app.use("/graphql", cors({ origin: "http://localhost:5173", credentials: true }), express.json(), expressMiddleware(server));
+    // app.use("/api/upload", uploadRoute);
     if (process.env.NODE_ENV === "production") {
         const clientBuildPath = path.resolve(__dirname, "../../client/dist");
         console.log("📦 Serving static client from:", clientBuildPath);

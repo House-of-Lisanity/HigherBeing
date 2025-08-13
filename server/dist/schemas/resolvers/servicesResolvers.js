@@ -7,6 +7,9 @@ const servicesResolvers = {
         serviceById: async (_, { id }) => {
             return await Services.findById(id);
         },
+        allServices: async () => {
+            return await Services.find();
+        },
     },
     Mutation: {
         createServices: async (_, { input, }, context) => {

@@ -1,0 +1,104 @@
+/* Services Overview section, scoped to .home-page */
+.home-page {
+  .services-overview {
+    background-color: #f9f6f1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch; /* ensure both columns are same height */
+
+    .image-box {
+      width: 50%;
+      position: relative;
+      background-image: url("https://res.cloudinary.com/houseoflisanity/image/upload/v1755019884/kouji-tsuru-GLZP2j0spJk-unsplash_mzvgpg.jpg");
+      background-size: cover;
+      background-position: center;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+      }
+
+      .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+
+        /* “box-like” feel without bg/border */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        width: min(90%, 560px);
+        padding: 0 1rem;
+
+        color: #fff;
+        text-align: center;
+        font-size: 1.1rem;
+
+        h2 {
+          margin: 0;
+          font-size: clamp(1.6rem, 3vw, 2.2rem);
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+        }
+
+        p {
+          margin: 0;
+          max-width: 48ch;
+          line-height: 1.5;
+          font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+        }
+
+        /* minimalist barbell icon sizing */
+        .barbell {
+          width: 80px;
+          height: 24px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .overlay-text {
+          width: min(92%, 520px);
+          gap: 0.75rem;
+        }
+      }
+    }
+
+    .text-box {
+      margin: auto;
+      width: 50%;
+      display: flex;
+      justify-content: center;
+
+      .links-box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem;
+
+        a {
+          border: 1px solid #000;
+          text-align: center;
+          padding: 0.75rem;
+          text-decoration: none;
+          font-size: 0.85rem;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          color: #000;
+          transition: background 0.3s;
+
+          &:hover {
+            background: #000;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

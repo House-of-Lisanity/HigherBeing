@@ -22,11 +22,12 @@ const servicesTypeDefs = gql `
   type Query {
     servicesByType(type: String!): [Services]
     serviceById(id: ID!): Services
+    allServices: [Services]
   }
 
   type Mutation {
     createServices(input: CreateServicesInput!): Services
-    deleteServices(id: ID!): Boolean
+    deleteService(id: ID!): Boolean
   }
 `;
 export default servicesTypeDefs;
