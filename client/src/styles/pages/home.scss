@@ -1,6 +1,20 @@
+@use "../base/baseindex" as *;
+
 .home-page {
   display: flex;
   flex-direction: column;
+
+  /* Temporary Construction Banner */
+  .construction-banner {
+    background-color: $color-accent;
+    color: $color-light;
+    text-align: center;
+    padding: $spacing-xs $spacing-sm;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
   section {
     max-height: 50vh;

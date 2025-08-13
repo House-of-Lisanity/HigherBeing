@@ -1,0 +1,19 @@
+@use "../base/baseindex" as *;
+
+.uc-component {
+  position: relative;
+  min-height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .uc-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    color: $color-light;
+    padding: $spacing-lg $spacing-md;
+    text-align: center;
+    border-radius: 8px;
+  }
+}

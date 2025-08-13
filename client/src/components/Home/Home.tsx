@@ -5,6 +5,16 @@ import { Link } from "react-router-dom"; // only if using react-router
 export default function Home() {
   return (
     <main className="home-page">
+      <div className="construction-banner">
+        Website under construction — in the meantime, you can find our contact
+        info below.
+        {/* <a
+          href="mailto:info@higherbeing.com"
+          style={{ textDecoration: "underline" }}
+        >
+          info@higherbeing.com
+        </a> */}
+      </div>
       {/* Hero Section */}
       <section className="hero-banner">
         <div className="hero-overlay">
