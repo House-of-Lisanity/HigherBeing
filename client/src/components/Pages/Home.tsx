@@ -7,7 +7,7 @@ export default function Home() {
       <div className="construction-banner">
         Website under construction — in the meantime, you can{" "}
         <a
-          href="mailto:info@higherbeing.com"
+          href="mailto:higherbeingllc@gmail.com"
           style={{ textDecoration: "underline" }}
         >
           email us
