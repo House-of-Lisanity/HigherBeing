@@ -5,14 +5,14 @@ export default function Home() {
   return (
     <main className="home-page">
       <div className="construction-banner">
-        Website under construction — in the meantime, you can find our contact
-        info below.
-        {/* <a
+        Website under construction — in the meantime, you can{" "}
+        <a
           href="mailto:info@higherbeing.com"
           style={{ textDecoration: "underline" }}
         >
-          info@higherbeing.com
-        </a> */}
+          email us
+        </a>
+        .
       </div>
       {/* Hero Section */}
       <section className="hero-banner">

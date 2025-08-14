@@ -79,82 +79,30 @@
   }
 }
 
-// /* Three Pillars section, scoped to .home-page */
-// .home-page {
-//   .three-pillars {
-//     max-height: 50vh;
-//     position: relative;
-//     isolation: isolate;
-//     overflow: hidden;
-//     background: none;
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-around;
-//     padding: 3rem 1rem;
+/* Responsive: Three pillars stack */
+@media (max-width: 1000px) {
+  .home-page .three-pillars {
+    padding: 2rem 1rem;
+  }
+  .home-page .three-pillars .pillar {
+    width: 28%;
+    min-height: 320px;
+  }
+}
 
-//     &::before {
-//       content: "";
-//       position: absolute;
-//       inset: 0;
-//       background-image: url("https://res.cloudinary.com/houseoflisanity/image/upload/v1755019884/maxence-pira-RIUksHGj2lM-unsplash_rgjjpe.jpg");
-//       background-size: cover;
-//       background-position: center 15%; /* nudge down */
-//       filter: blur(6px);
-//       opacity: 0.6;
-//       transform: scale(1.05);
-//       z-index: -1;
-//     }
-
-//     .pillar {
-//       position: relative;
-//       padding: 2rem;
-//       width: 20%;
-//       min-height: 360px;
-//       text-align: left;
-//       background: transparent;
-
-//       &::before {
-//         content: "";
-//         position: absolute;
-//         inset: 0;
-//         background-color: rgba(255, 255, 255, 0.3);
-//         z-index: 0;
-//         pointer-events: none;
-//         border-radius: 0.5rem;
-//       }
-
-//       &::after {
-//         content: "";
-//         position: absolute;
-//         top: 50%;
-//         left: 2rem; /* inset to avoid touching edges */
-//         right: 2rem;
-//         height: 1px;
-//         background-color: rgba(255, 255, 255, 0.85);
-//         z-index: 1;
-//         pointer-events: none;
-//       }
-
-//       h3 {
-//         position: absolute;
-//         top: 2rem;
-//         left: 2rem;
-//         right: 2rem;
-//         margin: 0;
-//         font-size: 1.5rem;
-//         z-index: 2; /* text stays fully opaque */
-//       }
-
-//       .text {
-//         position: absolute;
-//         top: calc(50% + 0.75rem);
-//         left: 2rem;
-//         right: 2rem;
-//         margin: 0;
-//         font-size: 0.9rem;
-//         line-height: 1.4;
-//         z-index: 2;
-//       }
-//     }
-//   }
-// }
+@media (max-width: 800px) {
+  .home-page .three-pillars {
+    max-height: none;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .home-page .three-pillars .pillar {
+    width: 100%;
+    min-height: 260px;
+    text-align: left;
+  }
+  .home-page .three-pillars .pillar::after {
+    left: 1.25rem;
+    right: 1.25rem;
+  }
+}

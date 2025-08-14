@@ -19,3 +19,16 @@
     text-align: right;
   }
 }
+
+/* Responsive: Simple footer */
+@media (max-width: 700px) {
+  .footer-simple {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+
+    .brand-credit {
+      text-align: center;
+    }
+  }
+}

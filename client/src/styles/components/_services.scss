@@ -102,3 +102,36 @@
     }
   }
 }
+/* Responsive: Services overview */
+@media (max-width: 900px) {
+  .home-page .services-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .home-page .services-overview .image-box,
+  .home-page .services-overview .text-box {
+    width: 100%;
+  }
+
+  .home-page .services-overview .image-box {
+    min-height: 40vh; /* keep visual presence without being huge */
+  }
+
+  .home-page .services-overview .overlay-text {
+    width: min(92%, 520px);
+    // padding: 0 $spacing-sm;
+  }
+
+  .home-page .services-overview .links-box {
+    // padding: $spacing-sm $spacing-md;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .home-page .services-overview .links-box a {
+    width: 100%;
+  }
+}

@@ -131,6 +131,27 @@
   }
 }
 
+/* Extra-small footer tweaks */
+@media (max-width: 600px) {
+  .footer {
+    padding: $spacing-md;
+  }
+  .footer .brand .brand-name {
+    font-size: clamp(1.2rem, 6vw, $font-size-h3);
+  }
+  .footer .contact address,
+  .footer .hours p {
+    font-size: 1rem;
+  }
+  .footer .connect-band {
+    justify-content: center;
+    gap: 0.75rem;
+    span {
+      font-size: clamp(1.4rem, 6vw, $font-size-h2);
+    }
+  }
+}
+
 // @use "../base/variables" as *;
 
 // .footer {

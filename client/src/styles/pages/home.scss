@@ -24,29 +24,11 @@
   justify-content: center;
 }
 
-// @use "../base/baseindex" as *;
-
-// .home-page {
-//   display: flex;
-//   flex-direction: column;
-
-//   /* Temporary Construction Banner */
-//   .construction-banner {
-//     background-color: $color-accent;
-//     color: $color-light;
-//     text-align: center;
-//     padding: $spacing-xs $spacing-sm;
-//     font-size: 0.95rem;
-//     letter-spacing: 0.03em;
-//     font-weight: 500;
-//     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-//   }
-
-//   section {
-//     max-height: 50vh;
-//     min-height: 50vh;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//   }
-// }
+/* Page-level responsive: let sections grow on phones */
+@media (max-width: 900px) {
+  .home-page section {
+    min-height: auto;
+    max-height: none;
+    padding: $spacing-md $spacing-sm;
+  }
+}

@@ -50,6 +50,37 @@
   }
 }
 
+/* Responsive: Simple navbar */
+@media (max-width: 900px) {
+  .navbar-simple {
+    padding: 0.5rem 1rem;
+  }
+  .navbar-simple .nav-links {
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap; /* let links wrap instead of overflowing */
+    justify-content: flex-end;
+  }
+  .navbar-simple .nav-links a {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-simple {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
+  .navbar-simple .nav-logo span {
+    font-size: 1rem;
+  }
+  .navbar-simple .nav-links {
+    width: 100%;
+    justify-content: center; /* move links to a second row centered */
+  }
+}
+
 // @use "../base/variables" as *;
 
 // .navbar {
