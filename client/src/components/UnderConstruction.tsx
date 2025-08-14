@@ -1,5 +1,5 @@
-import React from "react";
-import "../styles/components/under-construction.scss";
+import Footer from "./Footer";
+import Navbar from "./PublicNav";
 
 type Props = {
   title?: string;
@@ -13,17 +13,24 @@ export default function UnderConstruction({
   bg,
 }: Props) {
   const defaultBg =
-    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop"; // fallback nature image
+    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop";
 
   return (
-    <div
-      className="uc-component"
-      style={{ backgroundImage: `url(${bg || defaultBg})` }}
-    >
-      <div className="uc-overlay">
-        <h1>{title}</h1>
-        <p>{message}</p>
+    <div className="uc-page">
+      <Navbar />
+      <div
+        className="uc-component"
+        style={{
+          // Pass the image to a CSS variable so ::before can use it
+          ["--uc-bg-image" as any]: `url(${bg || defaultBg})`,
+        }}
+      >
+        <div className="uc-overlay">
+          <h1>{title}</h1>
+          <p>{message}</p>
+        </div>
       </div>
+      <Footer />
     </div>
   );
 }

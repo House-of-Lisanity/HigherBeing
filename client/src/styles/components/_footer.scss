@@ -1,131 +1,266 @@
+@use "../base/variables" as *;
+
 .footer {
-  background-color: #1e1e17;
-  color: #eae6da;
+  background-color: $color-dark;
+  color: $color-overlay;
   min-height: 50vh;
   max-height: 50vh;
-  padding: 2.5rem 3rem;
+  padding: ($spacing-md + $spacing-xs) $spacing-lg;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
 
-  /* --- Top two-row grid --- */
-  .top {
-    display: grid;
-    grid-template-columns: 360px 1fr 1fr; /* left column for logo+name, center column for hours */
-    grid-template-rows: auto auto; /* row1 brand, row2 contact/hours */
-    gap: 1.5rem 3rem;
-    align-items: start;
-    flex: 1;
+.footer .top {
+  display: grid;
+  grid-template-columns: 360px 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.5rem 3rem;
+  align-items: start;
+  flex: 1;
+}
+
+.footer .brand {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer .brand img {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+.footer .brand .brand-name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: $font-size-h3;
+  text-transform: uppercase;
+  color: $color-overlay;
+}
+
+.footer .contact {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.footer .contact h4 {
+  font-size: $font-size-h2;
+  font-weight: 400;
+  margin: 0 0 $spacing-sm;
+}
+
+.footer .contact address {
+  font-style: normal;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+.footer .hours {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.footer .hours h4 {
+  font-size: $font-size-h2;
+  font-weight: 400;
+  margin: 0 0 $spacing-sm;
+}
+
+.footer .hours p {
+  margin: 0.25rem 0;
+  font-size: 1.15rem;
+}
+
+.footer .connect-band {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid $color-overlay;
+  border-bottom: 1px solid $color-overlay;
+}
+
+.footer .connect-band span {
+  font-size: $font-size-h2;
+  font-weight: 400;
+  margin-right: 1rem;
+}
+
+.footer .connect-band .icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid $color-overlay;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-overlay;
+  text-decoration: none;
+  transition: background-color $transition-fast, color $transition-fast;
+}
+
+.footer .connect-band .icon:hover {
+  background-color: $color-dark;
+  color: $color-overlay;
+}
+
+@media (max-width: 900px) {
+  .footer .top {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1.25rem;
   }
-
-  .brand {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-
-    img {
-      display: block;
-      width: 100px;
-      height: 100px;
-    }
-
-    .brand-name {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.05;
-      letter-spacing: 0.08em;
-      font-weight: 700;
-      font-size: 1.6rem; /* stacked to the right of logo */
-      text-transform: uppercase;
-      color: #eae6da;
-    }
+  .footer .brand {
+    grid-column: 1;
+    grid-row: 1;
   }
-
-  .contact {
-    grid-column: 1 / 2; /* under the logo */
-    grid-row: 2 / 3;
-    h4 {
-      font-size: 2.2rem;
-      font-weight: 400;
-      margin: 0 0 1rem;
-    }
-    address {
-      font-style: normal;
-      font-size: 1.15rem;
-      line-height: 1.5;
-    }
+  .footer .contact {
+    grid-column: 1;
+    grid-row: 2;
   }
-
-  .hours {
-    grid-column: 2 / 3; /* center area */
-    grid-row: 2 / 3;
-    h4 {
-      font-size: 2.2rem;
-      font-weight: 400;
-      margin: 0 0 1rem;
-    }
-    p {
-      margin: 0.25rem 0;
-      font-size: 1.15rem;
-    }
-  }
-
-  /* --- Bottom connect band --- */
-  .connect-band {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.25rem 0;
-    border-top: 1px solid #b4ae9e;
-    border-bottom: 1px solid #b4ae9e;
-
-    span {
-      font-size: 2.2rem;
-      font-weight: 400;
-      margin-right: 1rem;
-    }
-
-    .icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid #eae6da;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: #eae6da;
-      text-decoration: none;
-      transition: background-color 0.2s, color 0.2s;
-
-      &:hover {
-        background-color: #eae6da;
-        color: #1e1e17;
-      }
-      svg {
-        display: block;
-      }
-    }
-  }
-
-  @media (max-width: 900px) {
-    .top {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto auto auto;
-      gap: 1.25rem;
-    }
-    .brand {
-      grid-column: 1;
-      grid-row: 1;
-    }
-    .contact {
-      grid-column: 1;
-      grid-row: 2;
-    }
-    .hours {
-      grid-column: 1;
-      grid-row: 3;
-    }
+  .footer .hours {
+    grid-column: 1;
+    grid-row: 3;
   }
 }
+
+// @use "../base/variables" as *;
+
+// .footer {
+//   background-color: #1e1e17;
+//   color: #eae6da;
+//   min-height: 50vh;
+//   max-height: 50vh;
+//   padding: 2.5rem 3rem;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+
+//   /* --- Top two-row grid --- */
+//   .top {
+//     display: grid;
+//     grid-template-columns: 360px 1fr 1fr; /* left column for logo+name, center column for hours */
+//     grid-template-rows: auto auto; /* row1 brand, row2 contact/hours */
+//     gap: 1.5rem 3rem;
+//     align-items: start;
+//     flex: 1;
+//   }
+
+//   .brand {
+//     grid-column: 1 / 2;
+//     grid-row: 1 / 2;
+//     display: flex;
+//     align-items: center;
+//     gap: 1rem;
+
+//     img {
+//       display: block;
+//       width: 100px;
+//       height: 100px;
+//     }
+
+//     .brand-name {
+//       display: flex;
+//       flex-direction: column;
+//       line-height: 1.05;
+//       letter-spacing: 0.08em;
+//       font-weight: 700;
+//       font-size: 1.6rem; /* stacked to the right of logo */
+//       text-transform: uppercase;
+//       color: #eae6da;
+//     }
+//   }
+
+//   .contact {
+//     grid-column: 1 / 2; /* under the logo */
+//     grid-row: 2 / 3;
+//     h4 {
+//       font-size: 2.2rem;
+//       font-weight: 400;
+//       margin: 0 0 1rem;
+//     }
+//     address {
+//       font-style: normal;
+//       font-size: 1.15rem;
+//       line-height: 1.5;
+//     }
+//   }
+
+//   .hours {
+//     grid-column: 2 / 3; /* center area */
+//     grid-row: 2 / 3;
+//     h4 {
+//       font-size: 2.2rem;
+//       font-weight: 400;
+//       margin: 0 0 1rem;
+//     }
+//     p {
+//       margin: 0.25rem 0;
+//       font-size: 1.15rem;
+//     }
+//   }
+
+//   /* --- Bottom connect band --- */
+//   .connect-band {
+//     display: flex;
+//     align-items: center;
+//     gap: 1rem;
+//     padding: 1.25rem 0;
+//     border-top: 1px solid #b4ae9e;
+//     border-bottom: 1px solid #b4ae9e;
+
+//     span {
+//       font-size: 2.2rem;
+//       font-weight: 400;
+//       margin-right: 1rem;
+//     }
+
+//     .icon {
+//       width: 44px;
+//       height: 44px;
+//       border-radius: 50%;
+//       border: 1px solid #eae6da;
+//       display: inline-flex;
+//       align-items: center;
+//       justify-content: center;
+//       color: #eae6da;
+//       text-decoration: none;
+//       transition: background-color 0.2s, color 0.2s;
+
+//       &:hover {
+//         background-color: #eae6da;
+//         color: #1e1e17;
+//       }
+//       svg {
+//         display: block;
+//       }
+//     }
+//   }
+
+//   @media (max-width: 900px) {
+//     .top {
+//       grid-template-columns: 1fr;
+//       grid-template-rows: auto auto auto;
+//       gap: 1.25rem;
+//     }
+//     .brand {
+//       grid-column: 1;
+//       grid-row: 1;
+//     }
+//     .contact {
+//       grid-column: 1;
+//       grid-row: 2;
+//     }
+//     .hours {
+//       grid-column: 1;
+//       grid-row: 3;
+//     }
+//   }
+// }

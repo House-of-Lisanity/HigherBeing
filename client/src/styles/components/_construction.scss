@@ -1,19 +1,49 @@
 @use "../base/baseindex" as *;
 
+.uc-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* lock the total height */
+}
+
 .uc-component {
   position: relative;
-  min-height: 60vh;
-  background-size: cover;
-  background-position: center;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--uc-bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(6px);
+    opacity: 0.5;
+    z-index: 0;
+  }
 
   .uc-overlay {
-    background: rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 1;
+    background: rgba($color-dark, 0.4);
     color: $color-light;
     padding: $spacing-lg $spacing-md;
     text-align: center;
-    border-radius: 8px;
+    border-radius: $radius-sm;
+
+    h1 {
+      margin-bottom: $spacing-sm;
+      font-size: $font-size-h1;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+    }
   }
 }

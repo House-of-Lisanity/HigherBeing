@@ -1,19 +1,104 @@
-.contact-section {
-  padding: 2rem;
-  background-color: #fafafa;
-  text-align: center;
+@use "../base/variables" as *;
 
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+/* Contact page */
+.contact-page {
+  .contact-hero {
+    height: 50vh;
+    position: relative;
+    display: grid;
+    place-items: center;
+    background-image: url("https://res.cloudinary.com/houseoflisanity/image/upload/v1755034447/Untitled_wywnvn.png");
+    background-size: cover;
+    background-position: center 25%;
+    padding: $spacing-lg;
+
+    .overlay {
+      position: relative;
+      text-align: center;
+      color: $color-dark;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: -2rem;
+        background: radial-gradient(
+          ellipse at 50% 50%,
+          rgba($color-light, 0.32) 0%,
+          rgba($color-light, 0.15) 28%,
+          rgba($color-light, 0) 60%
+        );
+        filter: blur(12px);
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 8vw, 4rem);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-shadow: $shadow-lg;
+        margin: 0 0 $spacing-xs;
+      }
+
+      p {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+    }
   }
 
-  .card {
-    max-width: 600px;
-    margin: 0 auto;
+  .contact-panel {
+    background-color: $color-cream;
+    display: grid;
+    place-items: center;
+    padding: $spacing-xl $spacing-lg;
 
-    p {
-      font-size: 1.125rem;
+    .panel-inner {
+      background: $color-surface;
+      border: 1px solid $color-border-light;
+      border-radius: $radius-md;
+      box-shadow: $shadow-md;
+      max-width: 720px;
+      width: 100%;
+      padding: $spacing-lg;
+
+      h2 {
+        margin: 0 0 $spacing-sm;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin: 0 0 $spacing-md;
+        line-height: 1.55;
+      }
+
+      .cta-row {
+        display: flex;
+        gap: $spacing-sm;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 1.25rem;
+        border: 1px solid $color-text;
+        color: $color-text;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        transition: background $transition-fast, color $transition-fast;
+        box-shadow: $shadow-sm;
+
+        &:hover {
+          background: $color-text;
+          color: $color-light;
+        }
+
+        &.outline {
+          background: transparent;
+        }
+      }
     }
   }
 }

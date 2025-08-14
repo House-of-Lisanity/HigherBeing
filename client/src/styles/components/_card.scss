@@ -1,9 +1,11 @@
+@use "../base/variables" as *;
+
 .card {
-  padding: 1.5rem;
-  border-radius: 1rem;
-  background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease;
+  padding: $spacing-sm + $spacing-xs;
+  border-radius: $radius-md;
+  background-color: $color-surface;
+  box-shadow: $shadow-md;
+  transition: transform $transition-fast ease;
 
   &:hover {
     transform: translateY(-4px);
@@ -12,10 +14,33 @@
   h2,
   h3 {
     margin-top: 0;
-    font-weight: 600;
   }
 
   p {
-    margin-bottom: 0.5rem;
+    margin-bottom: $spacing-xs;
   }
 }
+
+// @use "../base/variables" as *;
+
+// .card {
+//   padding: $spacing-sm + $spacing-xs; // 1.5rem
+//   border-radius: $radius-md;
+//   background-color: $color-surface;
+//   box-shadow: $shadow-md;
+//   transition: transform $transition-fast ease;
+
+//   &:hover {
+//     transform: translateY(-4px);
+//   }
+
+//   // headings inherit global weights; only reset margins
+//   h2,
+//   h3 {
+//     margin-top: 0;
+//   }
+
+//   p {
+//     margin-bottom: $spacing-xs;
+//   }
+// }

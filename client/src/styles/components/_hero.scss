@@ -1,6 +1,8 @@
+@use "../base/variables" as *;
+
 .hero-banner {
   width: 100vw;
-  height: 75vh; // max 3/4 of viewport
+  height: 75vh; /* max 3/4 of viewport */
   background-image: url("https://res.cloudinary.com/houseoflisanity/image/upload/v1755034447/Untitled_wywnvn.png");
   background-size: cover;
   background-position: center 20%;
@@ -9,102 +11,211 @@
   justify-content: flex-start;
   position: relative;
   padding: 3rem;
+}
 
-  /* overlay wrapper */
-  .hero-overlay {
-    position: relative;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    gap: 2rem;
-    padding: 3rem 1.5rem;
-    color: #fff;
-    text-align: center;
-    z-index: 1;
+.hero-banner .hero-overlay {
+  position: relative;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+  color: $color-light;
+  text-align: center;
+  z-index: 1;
+}
 
-    /* ADDED: soft radial glow behind the title to add separation */
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        ellipse at 55% 55%,
-        rgba(255, 255, 255, 0.35) 0%,
-        rgba(255, 255, 255, 0.18) 22%,
-        rgba(255, 255, 255, 0) 50%
-      );
-      filter: blur(14px);
-      z-index: 0;
-      pointer-events: none;
-    }
-  }
+.hero-banner .hero-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 55% 55%,
+    rgba($color-light, 0.35) 0%,
+    rgba($color-light, 0.18) 22%,
+    rgba($color-light, 0) 50%
+  );
+  filter: blur(14px);
+  z-index: 0;
+  pointer-events: none;
+}
 
-  /* keep your existing pillars exactly as-is */
-  .hero-pillars {
-    position: absolute;
-    color: rgba(0, 0, 0, 0.8);
-    font-weight: 300;
-    top: -40%;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: clamp(2rem, 8vw, 6rem);
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.hero-banner .hero-pillars {
+  position: absolute;
+  color: rgba($color-text, 0.8);
+  font-weight: 300;
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: clamp(2rem, 8vw, 6rem);
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-    li {
-      position: relative;
-      font-size: clamp(0.9rem, 2.2vw, 1.4rem);
-      letter-spacing: 0.12em;
+.hero-banner .hero-pillars li {
+  position: relative;
+  font-size: clamp(0.9rem, 2.2vw, 1.4rem);
+  letter-spacing: 0.12em;
+}
 
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        width: clamp(60px, 12vw, 180px);
-        height: 1px;
-        background: rgba(255, 255, 255, 0.7);
-        transform: translateY(-50%);
-      }
-      &::before {
-        right: 100%;
-        margin-right: 1rem;
-      }
-      &::after {
-        left: 100%;
-        margin-left: 1rem;
-      }
+.hero-banner .hero-pillars li::before,
+.hero-banner .hero-pillars li::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: clamp(60px, 12vw, 180px);
+  height: 1px;
+  background: rgba($color-light, 0.7);
+  transform: translateY(-50%);
+}
 
-      &:first-child::before {
-        display: none;
-      }
-      &:last-child::after {
-        display: none;
-      }
-    }
-  }
+.hero-banner .hero-pillars li::before {
+  right: 100%;
+  margin-right: 1rem;
+}
 
-  /* ADDED: depth on title via gradient fill, stroke, and layered shadows */
-  h1 {
-    position: relative;
-    z-index: 2;
-    font-weight: 500;
-    font-size: clamp(2.8rem, 10vw, 7.5rem);
-    letter-spacing: 0.18em;
-    word-spacing: clamp(1rem, 3vw, 6rem);
-    text-transform: uppercase;
-    color: #fff;
-    text-shadow: 0 16px 42px rgba(0, 0, 0, 0.6);
-  }
+.hero-banner .hero-pillars li::after {
+  left: 100%;
+  margin-left: 1rem;
+}
 
-  /* fallback for browsers without background-clip:text */
-  @supports not (-webkit-background-clip: text) {
-    h1 {
-      color: #fff;
-      -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.25);
-    }
+.hero-banner .hero-pillars li:first-child::before {
+  display: none;
+}
+
+.hero-banner .hero-pillars li:last-child::after {
+  display: none;
+}
+
+.hero-banner h1 {
+  position: relative;
+  z-index: 2;
+  font-weight: 500;
+  font-size: clamp(2.8rem, 10vw, 7.5rem);
+  letter-spacing: 0.18em;
+  word-spacing: clamp(1rem, 3vw, 6rem);
+  text-transform: uppercase;
+  color: $color-light;
+  text-shadow: $shadow-lg;
+}
+
+@supports not (-webkit-background-clip: text) {
+  .hero-banner h1 {
+    color: $color-light;
+    -webkit-text-stroke: 0.5px rgba($color-black, 0.25);
   }
 }
+
+// .hero-banner {
+//   width: 100vw;
+//   height: 75vh; // max 3/4 of viewport
+//   background-image: url("https://res.cloudinary.com/houseoflisanity/image/upload/v1755034447/Untitled_wywnvn.png");
+//   background-size: cover;
+//   background-position: center 20%;
+//   display: flex;
+//   align-items: flex-start;
+//   justify-content: flex-start;
+//   position: relative;
+//   padding: 3rem;
+
+//   /* overlay wrapper */
+//   .hero-overlay {
+//     position: relative;
+//     inset: 0;
+//     display: grid;
+//     place-items: center;
+//     gap: 2rem;
+//     padding: 3rem 1.5rem;
+//     color: #fff;
+//     text-align: center;
+//     z-index: 1;
+
+//     /* ADDED: soft radial glow behind the title to add separation */
+//     &::before {
+//       content: "";
+//       position: absolute;
+//       inset: 0;
+//       background: radial-gradient(
+//         ellipse at 55% 55%,
+//         rgba(255, 255, 255, 0.35) 0%,
+//         rgba(255, 255, 255, 0.18) 22%,
+//         rgba(255, 255, 255, 0) 50%
+//       );
+//       filter: blur(14px);
+//       z-index: 0;
+//       pointer-events: none;
+//     }
+//   }
+
+//   /* keep your existing pillars exactly as-is */
+//   .hero-pillars {
+//     position: absolute;
+//     color: rgba(0, 0, 0, 0.8);
+//     font-weight: 300;
+//     top: -40%;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     display: flex;
+//     gap: clamp(2rem, 8vw, 6rem);
+//     align-items: center;
+//     list-style: none;
+//     margin: 0;
+//     padding: 0;
+
+//     li {
+//       position: relative;
+//       font-size: clamp(0.9rem, 2.2vw, 1.4rem);
+//       letter-spacing: 0.12em;
+
+//       &::before,
+//       &::after {
+//         content: "";
+//         position: absolute;
+//         top: 100%;
+//         width: clamp(60px, 12vw, 180px);
+//         height: 1px;
+//         background: rgba(255, 255, 255, 0.7);
+//         transform: translateY(-50%);
+//       }
+//       &::before {
+//         right: 100%;
+//         margin-right: 1rem;
+//       }
+//       &::after {
+//         left: 100%;
+//         margin-left: 1rem;
+//       }
+
+//       &:first-child::before {
+//         display: none;
+//       }
+//       &:last-child::after {
+//         display: none;
+//       }
+//     }
+//   }
+
+//   /* ADDED: depth on title via gradient fill, stroke, and layered shadows */
+//   h1 {
+//     position: relative;
+//     z-index: 2;
+//     font-weight: 500;
+//     font-size: clamp(2.8rem, 10vw, 7.5rem);
+//     letter-spacing: 0.18em;
+//     word-spacing: clamp(1rem, 3vw, 6rem);
+//     text-transform: uppercase;
+//     color: #fff;
+//     text-shadow: 0 16px 42px rgba(0, 0, 0, 0.6);
+//   }
+
+//   /* fallback for browsers without background-clip:text */
+//   @supports not (-webkit-background-clip: text) {
+//     h1 {
+//       color: #fff;
+//       -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.25);
+//     }
+//   }
+// }

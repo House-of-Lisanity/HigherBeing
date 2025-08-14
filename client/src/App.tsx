@@ -1,5 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/Home/Home";
+import Home from "./components/Pages/Home";
+import Flagship from "./components/Pages/Flagship";
+import Training from "./components/Pages/Training";
+import Wellness from "./components/Pages/Wellness";
+import Resources from "./components/Pages/Resources";
+import Contact from "./components/Pages/Contact";
+// Uncomment when ready
+
 // import Dashboard from "./components/Admin/Dashboard";
 // import Signup from "./components/SignUp";
 // import ResetPasswordForm from "./components/user/ResetPasswordForm";
@@ -12,6 +19,18 @@ export default function App() {
         {/* Public Routes */}
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Home />} />
+        <Route path="/about" element={<Flagship />} />
+        <Route path="/training" element={<Training />} />
+        <Route path="/wellness" element={<Wellness />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/contact" element={<Contact />} />
+
+        {/* Admin Routes */}
+        {/* Uncomment when ready */}
+        {/* <Route path="/admin" element={<Dashboard />} /> */}
+
+        {/* Protected Routes */}
+        {/* Uncomment when ready */}
 
         {/* Coming Soon */}
         {/*

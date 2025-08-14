@@ -1,0 +1,34 @@
+@use "variables" as *;
+
+/* Spacing utilities (optional shared helpers) */
+.u-pad-xs {
+  padding: $spacing-xs;
+}
+.u-pad-sm {
+  padding: $spacing-sm;
+}
+.u-pad-md {
+  padding: $spacing-md;
+}
+.u-pad-lg {
+  padding: $spacing-lg;
+}
+.u-pad-xl {
+  padding: $spacing-xl;
+}
+
+.u-mb-xs {
+  margin-bottom: $spacing-xs;
+}
+.u-mb-sm {
+  margin-bottom: $spacing-sm;
+}
+.u-mb-md {
+  margin-bottom: $spacing-md;
+}
+.u-mb-lg {
+  margin-bottom: $spacing-lg;
+}
+.u-mb-xl {
+  margin-bottom: $spacing-xl;
+}

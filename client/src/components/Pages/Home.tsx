@@ -1,6 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom"; // only if using react-router
-// Otherwise just use <a> for static links
+import { Link } from "react-router-dom";
+import Footer from "../Footer";
 
 export default function Home() {
   return (
@@ -93,19 +92,19 @@ export default function Home() {
             />
 
             <p>
-              Combining exercise and nutrition to help you build muscle faster.
+              Developing the self into a Higher Being - a self-actualized
+              individvual operating and existing at their highest potential.
             </p>
           </div>
         </div>
         <div className="text-box">
           <div className="links-box">
-            <a href="/about">Flagship Program</a>
-            <a href="/services/fitness">Individual Fitness Sessions</a>
-            <a href="/services/group">Group Fitness Session</a>
-            <a href="/services/wellness">Individual Wellness Mentorship</a>
-            <a href="/resources">Educational Resources</a>
-
-            <a href="/contact">Contact Us</a>
+            <Link to="/about">Flagship Program</Link>
+            <Link to="/training">Individual Fitness Sessions</Link>
+            <Link to="/training">Group Fitness Session</Link>
+            <Link to="/wellness">Individual Wellness Mentorship</Link>
+            <Link to="/resources">Educational Resources</Link>
+            <Link to="/contact">Contact Us</Link>
           </div>
         </div>
       </section>
@@ -151,22 +150,23 @@ export default function Home() {
           <span>Connect</span>
           <a
             className="icon"
-            href="https://facebook.com"
+            href="mailto:higherbeingllc@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Facebook"
+            aria-label="Email"
           >
-            {/* simple FB SVG */}
+            {/* simple email SVG */}
             <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
               <path
-                d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.3V12h2.3V9.8c0-2.3 1.4-3.6 3.5-3.6 1 0 2 .2 2 .2v2.2H14c-1.1 0-1.4.7-1.4 1.4V12h2.5l-.4 2.9h-2.1v7A10 10 0 0 0 22 12z"
+                d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01l8 5.33 8-5.33V4H4zm16 2.24-7.59 5.06a1 1 0 0 1-1.1 0L4 6.24V20h16V6.24z"
                 fill="currentColor"
               />
             </svg>
           </a>
+
           <a
             className="icon"
-            href="https://instagram.com"
+            href="https://www.instagram.com/keenanleal27/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -181,6 +181,7 @@ export default function Home() {
           </a>
         </div>
       </footer>
+      <Footer />
     </main>
   );
 }

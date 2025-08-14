@@ -2,9 +2,19 @@
 $color-dark: #343c42;
 $color-light: #fcfcfe;
 $color-accent: #3d7768;
-$color-overlay: rgba(177, 179, 166, 255);
+$color-overlay: rgba(177, 179, 166, 0.85);
 $color-border: #283237;
 $color-text: #1a1a1a;
+
+// Neutrals and surfaces
+$color-white: #ffffff;
+$color-black: #000000;
+$color-surface: #ffffff;
+$color-panel: #f7f7f7;
+$color-panel-alt: #fafafa;
+$color-cream: #f9f6f1;
+$color-border-light: #dddddd;
+$color-neutral-300: #cccccc;
 
 // Typography
 $font-primary: "Numans", Helvetica, Arial, sans-serif;
@@ -20,6 +30,67 @@ $spacing-md: 2rem;
 $spacing-lg: 4rem;
 $spacing-xl: 6rem;
 
-// Buttons
-$button-border: 1px solid $color-border;
-$button-padding: 0.75rem 1.5rem;
+// Radii
+$radius-sm: 8px;
+$radius-md: 1rem;
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+$shadow-lg: 0 16px 42px rgba(0, 0, 0, 0.6);
+
+// Transitions
+$transition-fast: 0.2s;
+
+// // Color palette from the design
+// $color-dark: #343c42;
+// $color-light: #fcfcfe;
+// $color-accent: #3d7768;
+// $color-overlay: rgba(177, 179, 166, 0.85);
+// $color-border: #283237;
+// $color-text: #1a1a1a;
+
+// // Typography
+// $font-primary: "Numans", Helvetica, Arial, sans-serif;
+// $font-size-base: 16px;
+// $font-size-h1: 2.5rem;
+// $font-size-h2: 2rem;
+// $font-size-h3: 1.5rem;
+
+// // Spacing
+// $spacing-xs: 0.5rem;
+// $spacing-sm: 1rem;
+// $spacing-md: 2rem;
+// $spacing-lg: 4rem;
+// $spacing-xl: 6rem;
+
+// // Buttons
+// $button-border: 1px solid $color-border;
+// $button-padding: 0.75rem 1.5rem;
+
+// // Neutrals
+// $color-white: #ffffff;
+// $color-black: #000000;
+// $color-surface: #ffffff; // card/page surface
+// $color-panel: #f7f7f7; // subtle panel backgrounds
+// $color-panel-alt: #fafafa;
+// $color-cream: #f9f6f1;
+// $color-border-light: #dddddd;
+// $color-neutral-300: #cccccc;
+
+// // Footer palette
+// $color-footer-bg: #1e1e17;
+// $color-footer-text: #eae6da;
+// $color-footer-border: #b4ae9e;
+
+// // Radii
+// $radius-sm: 8px;
+// $radius-md: 1rem;
+
+// // Shadows
+// $shadow-sm: 0 2px 6px rgba($color-black, 0.1);
+// $shadow-md: 0 4px 12px rgba($color-black, 0.12);
+// $shadow-lg: 0 16px 42px rgba($color-black, 0.6);
+
+// // Transitions
+// $transition-fast: 0.2s;
