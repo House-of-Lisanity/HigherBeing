@@ -1,18 +1,29 @@
 {
-  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "target": "ES2022", // Ensure modern JS support
-    "module": "NodeNext", // Enable import.meta and ESM
-    "moduleResolution": "NodeNext", // Required with NodeNext module
-    "rootDir": "src", // Source folder
-    "outDir": "dist", // Build output folder
-    "esModuleInterop": true, // For compatibility
+    "target": "ES2022", // same or better than ES2020
+    "lib": ["ES2020"], // add this
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "rootDir": "src",
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "checkJs": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "useUnknownInCatchVariables": true,
+    "sourceMap": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true // (Optional) If you import JSON configs
+    "resolveJsonModule": true,
+    "typeRoots": ["./node_modules/@types", "./src/types"]
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "archive"],
-  "typeRoots": ["./node_modules/@types", "./src/types"]
+  "exclude": ["node_modules", "dist", "archive"]
 }
